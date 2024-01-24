@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Radiology Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        
+        .report-container {
+            width: 80%;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.1);
+        }
+        
+        .report-header {
+            text-align: center;
+            padding-bottom: 10px; /* Reduced from 20px */
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .center-logo {
+            width: 100px;
+            height: 100px;
+        }
+        
+        .center-name {
+            color: #333;
+            font-size: 24px;
+        }
+        
+        .center-info, .patient-info, .findings {
+            margin-top: 10px; /* Reduced from 20px */
+        }
+        
+        h2 {
+            color: #333;
+            font-size: 20px;
+        }
+        
+        p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        ul {
+            padding-left: 20px;
+        }
+        </style>
+</head>
+<body>
+    <div class="report-container">
+        <header class="report-header">
+            <img src="https://i.postimg.cc/3wRRZ5Yt/1.png" alt="Radiology Center Logo" class="center-logo">
+            <h1 class="center-name">Radiology Center Name</h1>
+        </header>
+        <div class="center-info">
+            <p>Address:73 IZIKI 1 Marrakech</p>
+            <p>Phone: +212 712345678</p>
+            <p>Email: modoock@gmail.com</p>
+        </div>
+        <div class="patient-info">
+            <h2>Patient Name: {{nomPatient}}</h2>
+            <p>Age: 18</p>
+            <p>Doctor: {{nomMedcinT}}</p>
+            <p>Doctor referent: {{nomMedcinR}}</p>
+        </div>
+        <div class="findings">
+            <h2>Findings</h2>
+            <ul>
+                {% for item in resultat %}
+                    <li>{{ item }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
