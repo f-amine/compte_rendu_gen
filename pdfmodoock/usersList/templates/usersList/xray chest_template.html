@@ -1,83 +1,143 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Radiology Report</title>
+
     <style>
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
         }
-        
+
         .report-container {
-            width: 80%;
-            margin: auto;
-            background-color: #fff;
-            padding: 20px;
-            box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.1);
+            background-color: white;
+            width: 50%;
+            margin: 5px auto;
+            border-radius: 10px;
+            padding: 5px 10px;
+            box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+            
         }
-        
-        .report-header {
+
+        header {
             text-align: center;
-            padding-bottom: 10px; /* Reduced from 20px */
-            border-bottom: 1px solid #ddd;
+            margin-bottom: 20px;
         }
-        
-        .center-logo {
-            width: 100px;
-            height: 100px;
+
+        .logo {
+            width: 120px;
         }
-        
-        .center-name {
-            color: #333;
-            font-size: 24px;
+
+        header h2 {
+            margin: 0;
+            color: #0a3c79
         }
-        
-        .center-info, .patient-info, .findings {
-            margin-top: 10px; /* Reduced from 20px */
+
+        .info-container{
+            background-color: #E6E7E8;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px 0;
+            border: solid #c0c0c0 2px;
+            box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+
         }
-        
-        h2 {
-            color: #333;
-            font-size: 20px;
+
+        .info-container .title {
+            color: #2b2b2b;
+            /* background-color: white; */
+            padding: 10px;
+            border-radius: 5px;
+            margin: 0 0 10px 0;
+            /* border: solid #a4a4a4 2px ; */
+
+
         }
-        
-        p {
-            color: #666;
-            line-height: 1.6;
+
+        .infos {
+            display: grid;
+            gap: 10px;
+            grid-template-columns: 0.3fr 1fr;
+            margin: 0 0 10px 0;
         }
-        
-        ul {
-            padding-left: 20px;
+
+       .infos div {
+            padding: 10px;
+            border-radius: 5px;
+            background-color: white;
+            border-left: solid #a4a4a4 2px ;
+
+            
         }
-        </style>
+ 
+        .lable {
+            border-radius: 10px;
+            /* text-align: center; */
+            font-weight: bold;
+        }
+        .findings.infos{
+            display: block;
+            text-align: center;
+            margin: 0;
+        }
+        .findings div{
+            border-left:none ;
+            border-bottom: solid #a4a4a4 2px ;
+        }
+    </style>
 </head>
+
 <body>
     <div class="report-container">
-        <header class="report-header">
-            <img src="https://i.postimg.cc/3wRRZ5Yt/1.png" alt="Radiology Center Logo" class="center-logo">
-            <h1 class="center-name">Radiology Center Name</h1>
+        <header>
+            <img src="https://i.postimg.cc/ZqyDDGGz/Modoock.png" alt="Radiology Center Logo" class="logo">
+            <h2 class="">Modoock Health</h2>
         </header>
-        <div class="center-info">
-            <p>Address:73 IZIKI 1 Marrakech</p>
-            <p>Phone: +212 712345678</p>
-            <p>Email: modoock@gmail.com</p>
+        <div class="info-container">
+            <div class="infos">
+                <div class="lable">Address: </div>
+                <div>73 IZIKI 1 Marrakech </div>
+            </div>
+            <div class="infos">
+                <div class="lable">Phone: </div>
+                <div>+212 712345678 </div>
+            </div>
+            <div class="infos" style="margin-bottom: 0;">
+                <div class="lable">Email: </div>
+                <div>modoock@gmail.com </div>
+            </div>
         </div>
-        <div class="patient-info">
-            <h2>Patient Name: {{nomPatient}}</h2>
-            <p>Age: 18</p>
-            <p>Doctor: {{nomMedcinT}}</p>
-            <p>Doctor referent: {{nomMedcinR}}</p>
+        <div class="info-container">
+            <h4 class="title">Patient Name: {{nomPatient}}</h4>
+
+            <div class="infos">
+                <div class="lable">Age: </div>
+                <div>18</div>
+            </div>
+            <div class="infos">
+                <div class="lable">Doctor: </div>
+                <div>{{nomMedcinT}} </div>
+            </div>
+            <div class="infos">
+                <div class="lable">Doctor referent:</div>
+                <div>{{nomMedcinR}}</div>
+            </div>
         </div>
-        <div class="findings">
-            <h2>Findings</h2>
-            <ul>
-                {% for item in resultat %}
-                    <li>{{ item }}</li>
-                {% endfor %}
-            </ul>
+        <div class="info-container" >
+            <h4 class="title" style="margin-bottom: 0;">Findings</h4>
+
+            {% for item in resultat %}
+                <div class="findings infos" >
+                    <div>{{ item }}</div>
+                </div>
+            {% endfor %}
         </div>
     </div>
 </body>
+
 </html>
