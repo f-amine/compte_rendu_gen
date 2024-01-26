@@ -37,7 +37,7 @@ export class GeneratePdfComponent implements OnInit{
     this.transcriptSubscription.unsubscribe();
   }
   ngOnInit(): void {
-    this.http.get('http://localhost:8000/api/get_template/')
+    this.http.get('http://34.125.116.59:8000/api/get_template/')
     .subscribe((response: any) => {
       this.data = response;
     });
@@ -46,7 +46,7 @@ export class GeneratePdfComponent implements OnInit{
     formValue.templateName = this.selectedItem.name;
     formValue.resultat = this.transcribedText;
     console.log(formValue);
-    this.http.post('http://localhost:8000/api/generate_pdf/', formValue, { responseType: 'blob' })
+    this.http.post('http://34.125.116.59:8000/api/generate_pdf/', formValue, { responseType: 'blob' })
     .subscribe((response: Blob) => {
       const blob = new Blob([response], { type: 'application/pdf' });
 
