@@ -1,14 +1,18 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
 import { SpeechRecognitionService, SPEECH_RECOGNITION_SUPPORT } from '@ng-web-apis/speech';
 import { SpeechService } from '../speech.service';
 import { Subscription } from 'rxjs';
+import { initFlowbite } from 'flowbite';
+import { Component, ElementRef, ViewChild,OnInit } from '@angular/core';
+
 @Component({
   selector: 'app-generate-pdf',
   templateUrl: './generate-pdf.component.html',
   styleUrl: './generate-pdf.component.css'
 })
 export class GeneratePdfComponent implements OnInit{
+  @ViewChild('crudModal') crudModal!: ElementRef;
+  @ViewChild('closeButton') closeButton!: ElementRef;
   form = {
     nomPatient: '',
     nomMedcinT: '',
@@ -37,6 +41,7 @@ export class GeneratePdfComponent implements OnInit{
     this.transcriptSubscription.unsubscribe();
   }
   ngOnInit(): void {
+    initFlowbite()
     this.http.get('http://34.125.116.59:8000/api/get_template/')
     .subscribe((response: any) => {
       this.data = response;
@@ -65,8 +70,25 @@ export class GeneratePdfComponent implements OnInit{
     });
   }
 
+
+  ngAfterViewInit() {
+    this.closeButton.nativeElement.addEventListener('click', () => {
+      this.closeModal();
+    });
+
+    this.crudModal.nativeElement.addEventListener('click', (event: { target: any; }) => {
+      if (event.target === this.crudModal.nativeElement) {
+        this.closeModal();
+      }
+    });
+  }
+  closeModal() {
+    this.crudModal.nativeElement.classList.add('hidden'); // Hide the modal
+  }
   selectTemplate(item: any) {
     this.selectedItem = item;
+    this.crudModal.nativeElement.classList.remove('hidden'); // Show the modal
+
   }
 }
 
