@@ -1,143 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Radiology Report</title>
-
+    <title>Modoock Health</title>
     <style>
         body {
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
             font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            line-height: 1.6;
+            padding: 0;
+            margin: 0;
         }
-
         .report-container {
-            background-color: white;
-            width: 50%;
-            margin: 5px auto;
-            border-radius: 10px;
-            padding: 5px 10px;
-            box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
-            
+            background-color: #fff;
+            width: 80%;
+            max-width: 650px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
         }
-
         header {
             text-align: center;
             margin-bottom: 20px;
         }
-
-        .logo {
-            width: 120px;
-        }
-
         header h2 {
-            margin: 0;
-            color: #0a3c79
+            color: #0a3c79;
+            font-size: 24px;
+            margin-top: 0;
         }
-
-        .info-container{
-            background-color: #E6E7E8;
-            border-radius: 10px;
-            padding: 10px;
-            margin: 10px 0;
-            border: solid #c0c0c0 2px;
-            box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
-
+        header img.logo {
+            max-width: 100px;
+            height: auto;
         }
-
-        .info-container .title {
-            color: #2b2b2b;
-            /* background-color: white; */
-            padding: 10px;
-            border-radius: 5px;
-            margin: 0 0 10px 0;
-            /* border: solid #a4a4a4 2px ; */
-
-
+        .info-container {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
         }
-
+        .info-container h4 {
+            margin-top: 0;
+            color: #333;
+            font-size: 18px;
+        }
         .infos {
-            display: grid;
-            gap: 10px;
-            grid-template-columns: 0.3fr 1fr;
-            margin: 0 0 10px 0;
+            margin-bottom: 10px;
         }
-
-       .infos div {
-            padding: 10px;
-            border-radius: 5px;
-            background-color: white;
-            border-left: solid #a4a4a4 2px ;
-
-            
-        }
- 
-        .lable {
-            border-radius: 10px;
-            /* text-align: center; */
+        .infos .label {
             font-weight: bold;
+            display: inline-block;
+            margin-right: 5px;
         }
-        .findings.infos{
-            display: block;
-            text-align: center;
-            margin: 0;
+        .infos div {
+            display: inline;
+            padding: 5px;
+            background: #fff;
+            border: 1px solid #ddd;
         }
-        .findings div{
-            border-left:none ;
-            border-bottom: solid #a4a4a4 2px ;
+        .findings {
+            text-align: left;
+            padding: 10px;
+            border: 1px solid #ddd;
+            background: #fff;
+            margin-bottom: 10px;
+        }
+        .findings-item {
+            padding-left: 10px;
+            border-left: 2px solid #0a3c79;
+            margin-bottom: 5px;
         }
     </style>
 </head>
-
 <body>
     <div class="report-container">
         <header>
-            <img src="https://i.postimg.cc/ZqyDDGGz/Modoock.png" alt="Radiology Center Logo" class="logo">
-            <h2 class="">Modoock Health</h2>
+            <img src="https://i.postimg.cc/wjkWDyNB/Logo-1.png" alt="Radiology Center Logo" class="logo">
+            <h2>Modoock Health</h2>
         </header>
+
         <div class="info-container">
+            <!-- Contact Information -->
             <div class="infos">
-                <div class="lable">Address: </div>
-                <div>73 IZIKI 1 Marrakech </div>
+                <span class="label">Address:</span>
+                <div>73 IZIKI 1 Marrakech</div>
             </div>
             <div class="infos">
-                <div class="lable">Phone: </div>
-                <div>+212 712345678 </div>
+                <span class="label">Phone:</span>
+                <div>+212 712345678</div>
             </div>
-            <div class="infos" style="margin-bottom: 0;">
-                <div class="lable">Email: </div>
-                <div>modoock@gmail.com </div>
+            <div class="infos">
+                <span class="label">Email:</span>
+                <div>modoock@gmail.com</div>
             </div>
         </div>
-        <div class="info-container">
-            <h4 class="title">Patient Name: {{nomPatient}}</h4>
 
+        <div class="info-container">
+            <!-- Patient Information -->
+            <h4>Patient Name: {{nomPatient}}</h4>
             <div class="infos">
-                <div class="lable">Age: </div>
+                <span class="label">Age:</span>
                 <div>18</div>
             </div>
             <div class="infos">
-                <div class="lable">Doctor: </div>
-                <div>{{nomMedcinT}} </div>
+                <span class="label">Docteur:</span>
+                <div>{{nomMedcinT}}</div>
             </div>
             <div class="infos">
-                <div class="lable">Doctor referent:</div>
+                <span class="label">Docteur prescripteur:</span>
                 <div>{{nomMedcinR}}</div>
             </div>
         </div>
-        <div class="info-container" >
-            <h4 class="title" style="margin-bottom: 0;">Findings</h4>
 
+        <div class="info-container">
+            <!-- Findings -->
+            <h4>Resultat</h4>
             {% for item in resultat %}
-                <div class="findings infos" >
-                    <div>{{ item }}</div>
+                <div class="findings-item">
+                    {{ item }}
                 </div>
             {% endfor %}
         </div>
     </div>
 </body>
-
 </html>
