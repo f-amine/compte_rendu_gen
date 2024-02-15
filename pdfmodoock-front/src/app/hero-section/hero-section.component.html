@@ -1,44 +1,133 @@
-<section class="bg-white dark:bg-gray-900">
-  <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
-    <a
-      href="#"
-      class="inline-flex justify-between items-center py-1 px-1 pr-4 mb-7 text-sm text-gray-700 bg-gray-100 rounded-full dark:bg-gray-800 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700"
-      role="alert"
+<form class="flex items-center mb-8 max-w-sm mx-auto">
+  <label for="simple-search" class="sr-only">Search</label>
+  <div class="relative w-full">
+    <div
+      class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none"
     >
-      <span
-        class="text-xs bg-primary-600 rounded-full text-white px-4 py-1.5 mr-3"
-        >Nouveau</span
-      >
-      <span class="text-sm font-medium">Generer en utilisant la reconnaissance vocale</span>
       <svg
-        class="ml-2 w-5 h-5"
-        fill="currentColor"
-        viewBox="0 0 20 20"
+        class="w-6 h-6 text-gray-500 dark:text-gray-400"
         xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 512 512"
+        version="1.1"
       >
+        <path d="" stroke="none" fill="#9ca4b4" fill-rule="evenodd" />
         <path
+          d="M 172 1.485 C 102.734 15.307, 65.081 90.613, 95.992 153.500 C 117.618 197.497, 164.379 220.664, 212.958 211.448 C 252.488 203.950, 285.357 172.850, 295.487 133.362 C 303.112 103.640, 297.797 73.279, 280.193 46 C 274.715 37.511, 258.500 22.026, 248.907 16.122 C 238.531 9.737, 223.164 3.658, 212.140 1.578 C 202.077 -0.321, 181.292 -0.369, 172 1.485 M 87.334 257.481 C 49.204 264.399, 17.526 292.153, 5.130 329.500 C 0.336 343.941, -0.140 350.407, 0.195 396.500 C 0.487 436.683, 0.587 438.616, 2.500 441.182 C 3.600 442.658, 6.136 444.795, 8.136 445.932 C 11.717 447.969, 12.841 448, 82.386 448 C 126.381 448, 153 447.641, 153 447.049 C 153 446.526, 152.325 443.506, 151.500 440.339 C 148.269 427.933, 150.368 410.021, 156.444 398.161 C 165.412 380.656, 183.737 367.061, 202.500 363.993 C 205.800 363.453, 222.806 363.009, 240.292 363.006 C 265.477 363.001, 273.686 363.331, 279.792 364.591 C 286.132 365.899, 293.425 368.437, 297.209 370.652 C 297.599 370.881, 302.914 361.139, 309.020 349.005 C 321.563 324.077, 325.964 318.304, 338.877 309.838 C 345.720 305.352, 356.665 301, 361.105 301 C 364.994 301, 362.725 297.466, 352.194 287.118 C 336.184 271.387, 319.288 262.174, 298.631 257.911 C 290.035 256.137, 283.782 256.031, 192 256.103 C 116.610 256.163, 92.875 256.475, 87.334 257.481 M 366.239 342.335 C 357.967 345.335, 357.311 346.387, 331.411 398.178 C 317.922 425.151, 306.664 446.997, 306.392 446.726 C 306.121 446.454, 300.634 438.433, 294.199 428.901 C 285.769 416.413, 281.289 410.722, 278.166 408.535 L 273.832 405.500 242.467 405.198 C 207.993 404.865, 205.114 405.205, 199.330 410.284 C 190.466 418.066, 189.531 431.742, 197.227 441.037 C 197.927 441.882, 200.075 443.682, 202 445.037 C 205.457 447.470, 205.804 447.504, 230.203 447.813 L 254.905 448.126 272.603 474.813 C 291.596 503.454, 294.474 507.131, 300.210 510.088 C 307.957 514.081, 319.722 511.684, 325.381 504.959 C 326.920 503.130, 338.734 480.527, 351.636 454.729 L 375.093 407.823 393.663 438.662 C 403.877 455.623, 413.057 470.933, 414.063 472.685 C 424.616 491.056, 424.467 491.002, 463.876 490.994 C 481.462 490.991, 495.035 490.563, 497.277 489.940 C 505.460 487.668, 512.018 478.519, 511.978 469.434 C 511.940 460.966, 507.559 453.856, 500.002 450.001 C 496.417 448.172, 494.110 448, 473.195 448 C 448.845 448, 448.852 448.001, 446.641 443 C 446.276 442.175, 445.090 440.150, 444.004 438.500 C 442.918 436.850, 441.567 434.600, 441.002 433.500 C 440.437 432.400, 439.152 430.150, 438.145 428.500 C 437.139 426.850, 426.074 408.400, 413.556 387.500 C 400.796 366.195, 389.315 348.145, 387.424 346.416 C 381.917 341.381, 373.396 339.739, 366.239 342.335"
+          stroke="none"
+          fill="#9ca4ac"
           fill-rule="evenodd"
-          d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-          clip-rule="evenodd"
-        ></path>
+        />
       </svg>
-    </a>
-    <h1
-      class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white"
-    >
-      Révolutionner les comptes rendus de radiologie
-    </h1>
-    <p
-      class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400"
-    >
-      Chez Modoock Health, nous combinons la technologie de pointe avec une
-      innovation pratique pour transformer la manière de créer les rapports de
-      radiologie. Notre application simplifie le processus de rapportage, en
-      donnant aux radiologues des modèles intuitifs et des capacités avancées de
-      reconnaissance vocale. Nous nous engageons à améliorer l'efficacité et la
-      précision diagnostiques, contribuant ainsi à l'avenir de l'imagerie
-      médicale et des soins aux patients.
-    </p>
-
+    </div>
+    <input
+      [(ngModel)]="searchValue"
+      name="search value"
+      type="text"
+      id="simple-search"
+      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+      placeholder="Search branch name..."
+      required
+    />
   </div>
-</section>
+  <button
+    type="submit"
+    (click)="search()"
+    class="p-2.5 ms-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+  >
+    <svg
+      class="w-4 h-4"
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 20 20"
+    >
+      <path
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+      />
+    </svg>
+    <span class="sr-only">Search</span>
+  </button>
+</form>
+
+<div
+  *ngIf="
+    patientData &&
+    patientData.pageOfResults &&
+    patientData.pageOfResults.length > 0
+  "
+  class="flex justify-center flex-wrap space-x-4"
+>
+  <div
+    *ngFor="let patient of patientData.pageOfResults"
+    class="w-1/3 mb-4 max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+  >
+    <div class="flex flex-col items-center mt-4 pb-10">
+      <img
+        class="w-24 h-24 mb-3 rounded-full shadow-lg"
+        src="https://i.postimg.cc/pdGNKZPg/profile-user.png"
+        alt="Profile Picture"
+      />
+      <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">
+        {{ patient.givenName }} {{ patient.familyName }}
+      </h5>
+      <span class="text-sm text-gray-500 dark:text-gray-400"
+        >Sexe: {{ patient.gender }} | Age: {{ patient.age }}</span
+      >
+      <div class="flex mt-4 md:mt-6">
+        <!-- Replace "#" with appropriate URLs/actions -->
+        <a
+          href="#"
+          class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-button-100 rounded-lg hover:bg-button-200 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          >Generer</a
+        >
+        <a
+          href="#"
+          class="py-2 px-4 ms-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-button-100 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+          >Historique</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div
+  *ngIf="
+    patientData &&
+    patientData.name
+  "
+  class="flex justify-center flex-wrap space-x-4"
+>
+  <div
+    *ngFor="let patient of patientData"
+    class="w-1/3 mb-4 max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+  >
+    <div class="flex flex-col items-center mt-4 pb-10">
+      <img
+        class="w-24 h-24 mb-3 rounded-full shadow-lg"
+        src="https://i.postimg.cc/pdGNKZPg/profile-user.png"
+        alt="Profile Picture"
+      />
+      <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">
+        {{ patient.name }}
+      </h5>
+      <div class="flex mt-4 md:mt-6">
+        <!-- Replace "#" with appropriate URLs/actions -->
+        <a
+          href="#"
+          class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-button-100 rounded-lg hover:bg-button-200 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          >Generer</a
+        >
+        <a
+          href="#"
+          class="py-2 px-4 ms-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-button-100 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+          >Historique</a
+        >
+      </div>
+    </div>
+  </div>
+</div>

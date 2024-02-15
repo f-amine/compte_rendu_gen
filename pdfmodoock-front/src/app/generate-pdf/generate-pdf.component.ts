@@ -42,7 +42,7 @@ export class GeneratePdfComponent implements OnInit{
   }
   ngOnInit(): void {
     initFlowbite()
-    this.http.get('http://34.125.116.59:8000/api/get_template/')
+    this.http.get('http://his.modoock.com/api/get_template/')
     .subscribe((response: any) => {
       this.data = response;
     });
@@ -51,7 +51,7 @@ export class GeneratePdfComponent implements OnInit{
     formValue.templateName = this.selectedItem.name;
     formValue.resultat = this.transcribedText;
     console.log(formValue);
-    this.http.post('http://34.125.116.59:8000/api/generate_pdf/', formValue, { responseType: 'blob' })
+    this.http.post('http://his.modoock.com/api/generate_pdf/', formValue, { responseType: 'blob' })
     .subscribe((response: Blob) => {
       const blob = new Blob([response], { type: 'application/pdf' });
 
@@ -88,7 +88,6 @@ export class GeneratePdfComponent implements OnInit{
   selectTemplate(item: any) {
     this.selectedItem = item;
     this.crudModal.nativeElement.classList.remove('hidden'); // Show the modal
-
   }
 }
 
